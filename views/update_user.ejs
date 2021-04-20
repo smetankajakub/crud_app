@@ -1,0 +1,56 @@
+<%- include('include/_header') %>
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update user</h2>
+                <span class="text-light">Use the below form to update user</span>
+            </div>
+            <!--form handling-->
+            <form method="POST" id="update_user">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">name</label>
+                        <input type="hidden" name="id" value="<%=user.id%>">
+                        <input type="text" name="name" vlue="<%=user.name%>" placeholder="Mark Stoines">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Email</label>
+                        <input type="text" name="name" vlue="<%=user.email%>" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="text-light">gender</label>
+                        <div class="radio inline">
+                            <label for="gender" class="text-light">Male</label>
+                            <input type="radio" name="gender" value="male" <%=user.gender ==='male' ? 'checked' : '' %>>
+                        </div>
+                        <div class="radio inline">
+                            <label for="gender" class="text-light">Female</label>
+                            <input type="radio" name="gender" value="female" <%=user.gender ==='female' ? 'checked' : '' %>>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="text-light">Status</label>
+                        <div class="radio inline">
+                            <label for="status" class="text-light">Active</label>
+                            <input type="radio" name="status" value="active" <%=user.status ==='active' ? 'checked' : '' %>>
+                        </div>
+                        <div class="radio inline">
+                            <label for="status" class="text-light">Inactive</label>
+                            <input type="radio" name="status" value="inactive" <%=user.status ==='inactive' ? 'checked' : '' %>>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+<%- include('include/_footer') %>
